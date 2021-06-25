@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8" />
+<title>tw2113's latest Last.fm listening tracks</title>
+<meta name="description" content="Album covers and track information for my last ten listened to tracks on Last.FM">
+<style>
+	body {
+		color: #b90000;
+	}
+	#container {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		width: 90%;
+	}
+	#container .item-wrap {
+		flex: 1 1 32%;
+		margin: 5px;
+	}
+	#container img {
+		width: 100%;
+	}
+	#container p {
+		color: #111111;
+		margin: 0;
+	}
+	h1 {
+		text-align: center;
+	}
+
+</style>
+</head>
+
+<body>
+	<h1>Michael's latest Last.FM scrobbles via Spotify.</h1>
+<div id="container">
+<?php
+	$apikey = 'fcc6f589d15b8c8fdcbca5266d74620a';
+	$lastfm = json_decode(file_get_contents("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=tw2113&limit=9&&nowplaying=true&format=json&api_key=$apikey"));
+
+	$tmpl = '<div class="item-wrap"><img src="%s" alt="%s" title="%s" /><p>%s</p></div>';
+	foreach($lastfm->recenttracks->track as $cover) {
+		printf(
+			$tmpl,
+			$cover->image[3]->{'#text'},
+			$cover->name . ' by ' . $cover->artist->{'#text'},
+			$cover->name . ' by ' . $cover->artist->{'#text'},
+			$cover->name . ' by ' . $cover->artist->{'#text'}
+		);
+	}
+?>
+</div><!--End Container-->
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://trexthepirate.com/traffic/" : "http://trexthepirate.com/traffic/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {#b90000
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://trexthepirate.com/traffic/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+</body>
+</html>
+<?php
+/*
+	Fancy way to display the album art.
+	First item "currently streaming". Style a bit more to highlight. Add class for first one.
+	Blank graphic for when no art available.
+*/
+?>

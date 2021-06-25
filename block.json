@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "tw2113/lastfm-blocks",
+	"title": "Last.FM Blocks",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Last.FM Blocks",
+	"textdomain": "lastfm-blocks",
+	"supports": {
+		"html": true
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
