@@ -4,20 +4,22 @@
 	"description": "WordPress LastFM Blocks",
 	"author": "Michael Beckwith",
 	"license": "GPL-2.0-or-later",
-	"keywords": ["lastfm"],
+	"keywords": [
+		"lastfm"
+	],
 	"homepage": "https://michaelbox.net",
 	"repository": "https://github.com/tw2113/lastfm-blocks/issues",
 	"bugs": "https://github.com/tw2113/lastfm-block/issues",
 	"main": "build/index.js",
 	"dependencies": {
-		"@wordpress/block-editor": "^5.2.6",
-		"@wordpress/blocks": "^8.0.1",
-		"@wordpress/components": "^13.0.1",
-		"@wordpress/i18n": "^3.18.0",
-		"@wordpress/server-side-render": "^1.20.8"
+		"@wordpress/block-editor": "^6",
+		"@wordpress/blocks": "^9",
+		"@wordpress/components": "^14",
+		"@wordpress/i18n": "^4",
+		"@wordpress/server-side-render": "^2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^14.1.0"
+		"@wordpress/scripts": "^16"
 	},
 	"scripts": {
 		"build": "wp-scripts build",
