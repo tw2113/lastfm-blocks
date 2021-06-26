@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Last.M Blocks
+ * Plugin Name:     Last.FM Blocks
  * Description:     Last.FM data
  * Version:         1.0.0
  * Author:          Michael Beckwith
